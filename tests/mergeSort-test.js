@@ -29,8 +29,11 @@ describe('mergeSort', function() {
   })
 
   it('should sort a very large random array', function() {
-      let random = generateRandomNumbers( 1501, 1500)
-      mergeSort(random) 
+      let random = generateRandomNumbers(15001, 15000) //1500001, 1500000
+      let sortedArray = mergeSort(random);
 
+      for(let i = 0; i < sortedArray.length-1; i++) {
+      assert.equal(sortedArray[i] <= sortedArray[i + 1], true);
+    };
   })
 })

@@ -23,14 +23,16 @@ describe('insertionSort', function() {
 
   it('should sort negative numbers', function() {
     let array = [-3, -6, -2, -1, -7];
-
-    assert.deepEqual(array, [-3, -6, -2, -1, -7])
+ 
     assert.deepEqual(insertionSort(array), [-7, -6, -3, -2, -1])
   })
 
   it('should sort a very large random array', function() {
-      let random = generateRandomNumbers( 1501, 1500)
-      insertionSort(random) 
-
+      let random = generateRandomNumbers(3001, 3000) 
+      let sortedArray = insertionSort(random);
+  
+      for(let i = 0; i < sortedArray.length-1; i++) {
+      assert.equal(sortedArray[i] <= sortedArray[i + 1], true);
+    };
   })
 })

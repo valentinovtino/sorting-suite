@@ -29,8 +29,11 @@ describe('bubbleSort', function() {
   })
 
   it('should sort a very large random array', function() {
-      let random = generateRandomNumbers( 1501, 1500)
-      bubbleSort(random) 
+      let random = generateRandomNumbers(1501, 1500) //1000001, 1000000
+      let sortedArray = bubbleSort(random);
 
+      for(let i = 0; i < sortedArray.length-1; i++) {
+      assert.equal(sortedArray[i] <= sortedArray[i + 1], true);
+    };
   })
 })

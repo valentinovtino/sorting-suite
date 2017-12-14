@@ -29,9 +29,12 @@ describe('quickSort', function() {
   })
 
   it('should sort a very large random array', function() {
-      let random = generateRandomNumbers( 1501, 1500)
-      QuickSort(random) 
+      let random = generateRandomNumbers(20001, 20000) 
+      let sortedArray = QuickSort(random);
 
+      for(let i = 0; i < sortedArray.length-1; i++) {
+      assert.equal(sortedArray[i] <= sortedArray[i + 1], true);
+    };
   })
 })
 
